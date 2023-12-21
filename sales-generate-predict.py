@@ -25,7 +25,7 @@ df = user_input_features()
 st.subheader('Perbelanjaan pengiklanan anda')
 st.write(df)
 
-regressor = pickle.load(open(filename, 'rb'))
+regressor = pickle.load(open(salesrandomforestregressor.h5, 'rb'))
 predictions = regressor.predict(df)
 
 st.subheader('Ramalan')
