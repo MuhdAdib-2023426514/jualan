@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sklearn
+import pickle
 
 from sklearn.ensemble import RandomForestRegressor
 
@@ -24,7 +25,7 @@ df = user_input_features()
 st.subheader('Perbelanjaan pengiklanan anda')
 st.write(df)
 
-regressor = RandomForestRegressor(n_estimators=10, random_state=0, oob_score=True)
+regressor = pickle.load(open(filename, 'rb'))
 predictions = regressor.predict(df)
 
 st.subheader('Ramalan')
